@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Header from "./header";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +26,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Header></Header>
+      <div className="fixed inset-0 opacity-10 -z-40 bg-grayground">
+        <Image
+          className="object-cover"
+          src={"/bg3.jpg"}
+          alt="background"
+          fill
+        ></Image>
+      </div>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
