@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
 import Header from "./header";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["vietnamese", "latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const localwriting = localFont({
+  src: "../public/Font/writing/writing.ttf",
+  variable: "--font-writing",
+})
+
+const localTitle = localFont({
+  src: "../public/Font/title/LostVietnam-Regular.otf",
+  variable: "--font-title",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,18 +33,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Header></Header>
-      <div className="fixed inset-0 opacity-10 -z-40 bg-grayground">
-        <Image
-          className="object-cover"
-          src={"/bg3.jpg"}
-          alt="background"
-          fill
-        ></Image>
-      </div>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${localwriting.variable} ${inter.variable} ${localTitle.variable} antialiased`}
       >
+        <Header></Header>
+        <div className="fixed inset-0 opacity-20 -z-40">
+          <Image
+            className="object-cover"
+            src={"/bg3.jpg"}
+            alt="background"
+            fill
+          ></Image>
+        </div>
         {children}
       </body>
     </html>
