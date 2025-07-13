@@ -1,62 +1,34 @@
-import Image from "next/image";
 import Main from "./main";
 import About from "./about";
 import Character from "./character";
+import World from "./world";
+import Monster from "./monster";
+import Mob from "./mob";
+import Footer from "./footer";
+import NPC from "./npc";
 
 export default function Home() {
   return (
-    <main className="relative items-center h-max w-dvw justify-items-center pb-20 select-none overflow-hidden overflow-y-hidden">
-      <div className="w-dvw gap-0 items-center flex-1 rounded-lg shadow-lg grid grid-rows-4 grid-cols-1 overflow-hidden">
-        <Main></Main>
-        <About></About>
-        <Character></Character>
+    <main className="relative items-center h-max w-dvw justify-items-center select-none overflow-hidden overflow-y-hidden">
+      <div className="gap-0 items-center justify-center rounded-lg shadow-lg grid grid-rows-[1fr_1.5fr_1.5fr_2fr] grid-cols-1 ">
+        <div id="home">
+          <Main></Main>
+        </div>
+        <div id="about">
+          <About></About>
+          <World></World>
+        </div>
+        <div id="character">
+          <Character></Character>
+          <NPC></NPC>
+        </div>
+        <div id="monster">
+          <Monster></Monster>
+          <Mob></Mob>
+        </div>
       </div>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      <footer className="w-dvw">
+        <Footer></Footer>
       </footer>
     </main>
   );
