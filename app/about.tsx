@@ -1,8 +1,8 @@
 import Image from "next/image";
-import canva8 from "../public/asset/Canva-8.png"
-import dialogue from "../public/asset/dialogue.png"
-import canva2 from "../public/asset/Canva-2.png"
-import map from "../public/asset/5_Map.png"
+import canva8 from "../public/asset/Canva-8.png";
+import dialogue from "../public/asset/dialogue.png";
+import canva2 from "../public/asset/Canva-2.png";
+import map from "../public/asset/5_Map.png";
 
 export default function About() {
   return (
@@ -18,18 +18,17 @@ export default function About() {
                   fill
                   quality={50}
                   placeholder="blur"
-                  blurDataURL=""
                   className="object-cover object-center"
                 />
               </div>
-              <div className="relative w-[100rem] h-[30rem] z-[-5] bottom-50">
+              <div className="relative w-[100rem] h-[30rem] z-[-5]">
                 <Image
                   src={dialogue}
                   alt="Logo"
+                  fill
                   quality={50}
                   placeholder="blur"
-                  blurDataURL=""
-                  className="object-cover object-center"
+                  className="object-cover"
                 />
               </div>
               {/* title */}
