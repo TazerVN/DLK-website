@@ -7,7 +7,6 @@ import chutieu from "../public/asset/NPC/npc1.png";
 import codong from "../public/asset/NPC/npc2.png";
 import thodia from "../public/asset/NPC/npc3.png";
 import canva82 from "../public/asset/Canva-82.png";
-import scroll from "../public/asset/scroll.png";
 
 type GalleryItem = {
   id: number;

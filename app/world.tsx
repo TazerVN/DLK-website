@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // npm i lucide-react
-import khung from "../public/asset/Khung.png";
 import linhtu from "../public/asset/world/1.png";
 import hochuongthan from "../public/asset/world/2.png";
 import hoasonthach from "../public/asset/world/3.png";

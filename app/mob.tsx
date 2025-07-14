@@ -5,7 +5,6 @@ import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // npm i lucide-react
 
 import canva82 from "../public/asset/Canva-82.png";
-import dialogue from "../public/asset/dialogue.png";
 import mada from "../public/asset/ma/Ma_da.png";
 import madoi from "../public/asset/ma/Ma_Doi.png";
 import malai from "../public/asset/ma/Ma_lai.png";
