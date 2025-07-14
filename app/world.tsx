@@ -4,11 +4,11 @@ import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // npm i lucide-react
 import khung from "../public/asset/Khung.png";
-import linhtu from "../public/asset/world/1.png"
-import hochuongthan from "../public/asset/world/2.png"
-import hoasonthach from "../public/asset/world/3.png"
-import rungulinh from "../public/asset/world/4.png"
-import quylinhtran from "../public/asset/world/5.png"
+import linhtu from "../public/asset/world/1.png";
+import hochuongthan from "../public/asset/world/2.png";
+import hoasonthach from "../public/asset/world/3.png";
+import rungulinh from "../public/asset/world/4.png";
+import quylinhtran from "../public/asset/world/5.png";
 
 type GalleryItem = {
   id: number;
@@ -72,31 +72,62 @@ export default function World() {
   const currentItem = galleryData[currentIndex];
 
   return (
-    <div className="relative flex w-full h-[80rem] items-center justify-center overflow-hidden">
+    <div className="relative flex w-full h-[100dvh] items-center justify-center overflow-hidden">
       {/* Background with texture */}
-      <div className="absolute flex just w-[105rem] h-[63rem] border-4 border-foreground shadow-2xl rounded-3xl overflow-hidden">
+      {/* <div className="absolute flex just w-3/4 h-[63rem] border-4 border-foreground shadow-2xl rounded-3xl overflow-hidden">
         <Image
           src={khung}
           alt="Background image"
           fill
           quality={50}
           placeholder="blur"
-          className="object-contain z-20 backdrop-brightness-90"
+          className="object-cover z-20 backdrop-brightness-90"
         ></Image>
-      </div>
-      <div className="w-[100rem] flex">
+      </div> */}
+      <div className="w-3/4 flex">
         {/* Text Overlay */}
-        <div className="flex flex-col  items-center justify-center w-[35rem] h-[60rem] relative backdrop-brightness-50 p-30 z-10">
-          <h2 className="text-5xl writing font-bold uppercase text-yellowground">
+        <div className="flex flex-col items-center justify-center md:w-[35rem] h-[60rem] w-full relative backdrop-brightness-50 p-4 sm:p-8 md:p-16 lg:p-30 z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl writing font-bold uppercase text-yellowground">
             {currentItem.title}
           </h2>
-          <p className="mt-2 text-xl text-white">{currentItem.description}</p>
+          <p className="mt-2 text-base sm:text-lg md:text-xl text-white">
+            {currentItem.description}
+          </p>
         </div>
 
         {/* Main Gallery Container - This is the viewport for the slider */}
-        <div className="absolute w-[100rem] flex justify-center items-center">
+        <div className="absolute w-3/4 flex justify-center items-center border-4 border-foreground">
+        {/* Navigation Controls */}
+        <div className="absolute -bottom-1/4 left-1/2 z-20 flex -translate-x-1/2 items-center gap-8">
+          <button
+            onClick={handlePrev}
+            className="text-foreground/50 hover:text-foreground transition-colors duration-300"
+            aria-label="Previous Image"
+          >
+            <ChevronLeft size={32} />
+          </button>
+
+          <div className="flex items-center gap-2">
+            {galleryData.map((_, index) => (
+              <div
+                key={index}
+                className={`h-1 w-8 transition-all duration-300 ${
+                  index === currentIndex ? "bg-red-600" : "bg-gray-700"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            className="text-foreground/50 hover:text-foreground transition-colors duration-300"
+            aria-label="Next Image"
+          >
+            <ChevronRight size={32} />
+          </button>
+        </div>
           {/* Viewport for the sliding track */}
-          <div className="w-[110rem] h-full overflow-hidden">
+          <div className="w-[90dvw] h-full overflow-hidden">
             {/* The track that contains all images and slides */}
             <div
               className="flex h-full transition-transform duration-700 ease-in-out"
@@ -104,13 +135,14 @@ export default function World() {
             >
               {galleryData.map((item) => (
                 <div key={item.id} className="w-full h-full flex-shrink-0">
-                  <div className="relative w-[100rem] h-[60rem]">
+                  <div className="relative w-[100dvw] h-[60rem]">
                     <Image
                       src={item.imageSrc}
                       alt={item.title}
                       quality={50}
                       placeholder="blur"
                       className="object-cover -z-10"
+                      objectPosition="center"
                       fill
                     />
                   </div>
@@ -120,50 +152,20 @@ export default function World() {
             {/* Side Navigation Buttons */}
             <button
               onClick={handlePrev}
-              className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+              className="absolute -left-10 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
               aria-label="Previous Image"
             >
-              <ChevronLeft size={64} />
+              <ChevronLeft size={32} />
             </button>
             <button
               onClick={handleNext}
-              className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+              className="absolute -right-10 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
               aria-label="Next Image"
             >
-              <ChevronRight size={64} />
+              <ChevronRight size={32} />
             </button>
           </div>
         </div>
-      </div>
-
-      {/* Navigation Controls */}
-      <div className="absolute bottom-60 left-1/2 z-20 flex -translate-x-1/2 items-center gap-8">
-        <button
-          onClick={handlePrev}
-          className="text-foreground/50 hover:text-foreground transition-colors duration-300"
-          aria-label="Previous Image"
-        >
-          <ChevronLeft size={32} />
-        </button>
-
-        <div className="flex items-center gap-2">
-          {galleryData.map((_, index) => (
-            <div
-              key={index}
-              className={`h-1 w-8 transition-all duration-300 ${
-                index === currentIndex ? "bg-red-600" : "bg-gray-700"
-              }`}
-            />
-          ))}
-        </div>
-
-        <button
-          onClick={handleNext}
-          className="text-foreground/50 hover:text-foreground transition-colors duration-300"
-          aria-label="Next Image"
-        >
-          <ChevronRight size={32} />
-        </button>
       </div>
     </div>
   );

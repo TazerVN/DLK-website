@@ -23,8 +23,8 @@ export default function Footer() {
           {/* Section 1: Connect with Atlus & Socials */}
           <div className="flex justify-center items-center h-10 mb-10">
             <div className="flex items-center h-full">
-              <div className="bg-white text-black h-full flex items-center px-6">
-                <span className="font-sans font-bold tracking-widest text-sm">
+              <div className="bg-white text-black h-full flex items-center px-4 sm:px-6">
+                <span className="font-sans font-bold tracking-widest text-xs sm:text-sm">
                   FIND US HERE
                 </span>
               </div>
@@ -153,7 +153,7 @@ export default function Footer() {
           </div>
 
           {/* Section 4: Legal Text */}
-          <div className="text-center text-xs text-gray-500 max-w-5xl mx-auto space-y-4 mb-10">
+          <div className="text-center text-xs sm:text-sm text-gray-500 max-w-5xl mx-auto space-y-4 mb-10">
             <p>Copyright © 2025 by Lac Studio</p>
           </div>
         </div>

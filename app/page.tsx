@@ -9,26 +9,26 @@ import NPC from "./npc";
 
 export default function Home() {
   return (
-    <main className="relative items-center h-max w-dvw justify-items-center select-none overflow-hidden overflow-y-hidden">
-      <div className="gap-0 items-center justify-center rounded-lg shadow-lg grid grid-rows-[1fr_1.5fr_1.5fr_2fr] grid-cols-1 ">
-        <div id="home">
-          <Main></Main>
+    <main className="relative flex flex-col items-center h-max w-full justify-items-center select-none overflow-hidden">
+      <div className="flex flex-col gap-0 items-center justify-center rounded-lg shadow-lg w-full">
+        <div id="home" className="w-full">
+          <Main />
         </div>
-        <div id="about">
-          <About></About>
-          <World></World>
+        <div id="about" className="w-full">
+          <About />
+          <World />
         </div>
-        <div id="character">
-          <Character></Character>
-          <NPC></NPC>
+        <div id="character" className="w-full">
+          <Character />
+          <NPC />
         </div>
-        <div id="monster">
-          <Monster></Monster>
-          <Mob></Mob>
+        <div id="monster" className="w-full">
+          <Monster />
+          <Mob />
         </div>
       </div>
-      <footer className="w-dvw">
-        <Footer></Footer>
+      <footer className="w-full">
+        <Footer />
       </footer>
     </main>
   );

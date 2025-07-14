@@ -56,8 +56,8 @@ export default function Monster() {
 
   return (
     <div className="flex flex-col items-center w-full h-full gap-16 mt-32">
-      <div className="flex w-[100dvw] items-center justify-center">
-        <div className="absolute w-[100dvw] h-[9rem] border-y-4 bg-background z-10">
+      <div className="flex w-full items-center justify-center">
+        <div className="absolute w-full h-[9rem] border-y-4 bg-background z-10">
           <Image
             src={canva8}
             alt="Logo"
@@ -67,27 +67,27 @@ export default function Monster() {
             className="object-cover object-center"
           />
         </div>
-        <div className="relative w-[100rem] h-[30rem] z-10">
+        <div className="relative w-[30rem] md:w-[60rem] h-[40rem] z-10">
           <Image
             src={dialogue}
             alt="Logo"
             fill
             quality={50}
             placeholder="blur"
-            className="object-cover"
+            className="object-contain"
           />
         </div>
         {/* title */}
-        <h1 className="absolute mb-10 title text-center text-foreground text-8xl font-extrabold z-10">
+        <h1 className="absolute mb-6 title text-center text-foreground text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold z-10">
           Ma Quỷ
         </h1>
       </div>
       {/*   */}
       <div></div>
-      <div className="flex justify-center w-[90dvw] text-white">
-        <main className="flex gap-32 justify-center">
+      <div className="flex justify-center w-full md:w-[90dvw] text-white">
+        <main className="flex flex-col md:flex-row gap-8 md:gap-32 justify-center">
           {/* bg */}
-          <div className="absolute w-[117rem] h-[70rem] self-start border-foreground rounded-3xl border-4 overflow-hidden backdrop-blur-md">
+          <div className="absolute w-full md:w-[117rem] h-[70rem] self-start border-foreground rounded-3xl border-4 overflow-hidden backdrop-blur-md ">
             <Image
               src={canva7}
               alt="Background image"
@@ -102,23 +102,23 @@ export default function Monster() {
               fill
               quality={50}
               placeholder="blur"
-              className="object-contain object-center"
+              className="object-cover object-center"
             ></Image>
           </div>
-          <div className="w-[100rem] h-[70rem] lg:col-span-1 flex justify-center items-center relative">
+          <div className="w-full md:w-[100rem] h-auto md:h-[70rem] lg:col-span-1 flex flex-col justify-center items-center relative">
             {/* Info */}
-            <div className="lg:col-span-2 flex flex-col justify-center items-center lg:items-start mb-16">
+            <div className="lg:col-span-2 flex flex-col justify-center items-center lg:items-start mb-8 md:mb-0">
               <div className="text-center">
-                <h2 className="writing text-yellowground text-7xl font-bold mb-4 transition-opacity duration-500">
+                <h2 className="writing text-yellowground text-4xl sm:text-5xl md:text-5xl lg:text-7xl font-bold mb-4 transition-opacity duration-500">
                   {selectedMonster.name.toUpperCase()}
                 </h2>
-                <p className="leading-relaxed transition-opacity duration-500 h-[10rem] w-[40rem] ">
+                <p className="leading-relaxed transition-opacity duration-500 h-auto md:h-[10rem] w-full md:w-[40rem] p-4 md:p-0 text-sm sm:text-base md:text-lg lg:text-xl">
                   {selectedMonster.story}
                 </p>
               </div>
             </div>
             {/* Images */}
-            <div className="relative w-[80rem] h-[40rem] rounded-lg transition-all duration-500 ease-in-out">
+            <div className="relative w-full md:w-[80rem] h-[20rem] md:h-[40rem] rounded-lg transition-all duration-500 ease-in-out">
               <Image
                 src={selectedMonster.icon}
                 alt={`${selectedMonster.name} Avatar`}
@@ -133,11 +133,8 @@ export default function Monster() {
         </main>
       </div>
       {/* Icon Selector */}
-      <div className="flex flex-col justify-center items-center">
-        {/* <h3 className="title text-2xl md:text-3xl font-bold tracking-wider mb-6 text-center lg:text-left">
-                  CREATURES
-                </h3> */}
-        <div className="relative h-[25rem] w-[50rem]">
+      <div className="flex flex-col justify-center items-center mt-8 md:mt-0">
+        <div className="relative h-[15rem] md:h-[25rem] w-[20rem] md:w-[50rem]">
           <Image
             src={dialogue}
             alt={`Icon`}
@@ -147,7 +144,7 @@ export default function Monster() {
             className="object-cover rounded-lg"
           ></Image>
         </div>
-        <div className="absolute flex flex-wrap justify-center gap-4">
+        <div className="absolute flex flex-wrap justify-center gap-2 md:gap-4">
           {monsters.map((char) => (
             <div
               key={char.id}
@@ -156,13 +153,13 @@ export default function Monster() {
               title={char.name}
             >
               <div
-                className={`w-24 h-24 transition-all border-4 duration-300 border-b-4 rounded-lg ${
+                className={`w-16 h-16 md:w-24 md:h-24 transition-all border-4 duration-300 border-b-4 rounded-lg ${
                   selectedMonster.id === char.id
                     ? "border-foreground scale-110"
                     : "border-transparent group-hover:border-white/50"
                 }`}
               >
-                <div className="w-23 h-23 relative">
+                <div className="w-full h-full relative">
                   <Image
                     src={char.icon}
                     alt={`${char.name} Icon`}

@@ -58,70 +58,54 @@ export default function NPC() {
   const currentItem = galleryData[currentIndex];
 
   return (
-    <div className="relative flex w-full h-[80rem] items-center justify-center overflow-hidden">
-      {/* Background with texture */}
-      <div className="absolute w-[100rem] h-[45rem] bg-background border-4 border-foreground shadow-2xl rounded-3xl overflow-hidden">
-        <Image
-          src={canva82}
-          alt="Background image"
-          fill
-          quality={50}
-          placeholder="blur"
-          className="object-cover opacity-60"
-        ></Image>
-        <button
-          onClick={handlePrev}
-          className="absolute left-10 top-1/2 z-40 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-          aria-label="Previous Image"
-        >
-          <ChevronLeft size={64} />
-        </button>
-        <button
-          onClick={handleNext}
-          className="absolute right-10 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-          aria-label="Next Image"
-        >
-          <ChevronRight size={64} />
-        </button>
-      </div>
-      {/* Side Navigation Buttons */}
-      {/* Text Overlay */}
-      <div
-        className="flex flex-col justify-center items-center
-       text-white z-20 max-w-sm p-20"
-      >
-        <div className="absolute w-[60rem] h-[75rem]">
+    <div className="relative flex flex-col md:flex-row mt-40">
+      {/* Main Gallery Container - This is the viewport for the slider */}
+      <div className="flex flex-col md:flex-row items-center justify-center relative w-full h-2/3 z-10 bg-background">
+        <div className="flex bg-background shadow-2xl rounded-3xl ">
           <Image
-            src={scroll}
+            src={canva82}
             alt="Background image"
             fill
-            className="object-cover -z-10"
             quality={50}
             placeholder="blur"
+            className="object-cover opacity-60"
           ></Image>
+          <button
+            onClick={handlePrev}
+            className="absolute left-10 top-1/2 z-40 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+            aria-label="Previous Image"
+          >
+            <ChevronLeft size={32} />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-10 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+            aria-label="Next Image"
+          >
+            <ChevronRight size={32} />
+          </button>
         </div>
-        <div className="relative w-[20rem] h-[20rem]">
-          <h2 className="text-5xl writing font-bold uppercase text-foreground">
+        <div className="flex flex-col items-center justify-center z-10 w-3/4 p-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl writing font-bold uppercase text-foreground">
             {currentItem.title}
           </h2>
-          <p className="mt-2 text-xl text-background font-bold">
+          <p className="mt-2 text-base sm:text-lg md:text-xl text-background font-bold h-20 md:w-1/2">
             {currentItem.description}
           </p>
         </div>
-      </div>
-
-      {/* Main Gallery Container - This is the viewport for the slider */}
-      <div className="relative max-w-4xl z-10">
         {/* Viewport for the sliding track */}
-        <div className="w-full h-full overflow-hidden">
+        <div className="flex justify-center items-center w-3/4 overflow-hidden">
           {/* The track that contains all images and slides */}
           <div
             className="flex h-full transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {galleryData.map((item) => (
-              <div key={item.id} className="w-full h-full flex-shrink-0">
-                <div className="relative w-[70rem] h-[40rem]">
+              <div
+                key={item.id}
+                className="flex justify-center items-center w-full h-full flex-shrink-0"
+              >
+                <div className="relative w-[40rem] md:h-[70rem] md:w-[80rem] h-[30rem]">
                   <Image
                     src={item.imageSrc}
                     alt={item.title}
@@ -138,13 +122,13 @@ export default function NPC() {
       </div>
 
       {/* Navigation Controls */}
-      <div className="absolute bottom-80 left-11/19 z-20 flex -translate-x-1/2 items-center gap-8">
+      <div className="absolute bottom-20 left-1/2 z-20 flex -translate-x-1/2 items-center gap-8">
         <button
           onClick={handlePrev}
           className="text-red-600/50 hover:text-red-600 transition-colors duration-300"
           aria-label="Previous Image"
         >
-          <ChevronLeft size={32} />
+          <ChevronLeft size={16} />
         </button>
 
         <div className="flex items-center gap-2">
@@ -163,7 +147,7 @@ export default function NPC() {
           className="text-red-600/50 hover:text-red-600 transition-colors duration-300"
           aria-label="Next Image"
         >
-          <ChevronRight size={32} />
+          <ChevronRight size={16} />
         </button>
       </div>
     </div>

@@ -106,58 +106,58 @@ export default function Mob() {
   const currentItem = galleryData[currentIndex];
 
   return (
-    <div className="relative flex w-full h-[80rem] items-center justify-center overflow-hidden">
-      {/* Background with texture */}
-      <div className="absolute w-[110rem] h-[50rem] bg-background border-4 border-foreground rounded-2xl">
-        <Image
-          src={canva82}
-          alt="Background image"
-          fill
-          quality={50}
-          placeholder="blur"
-          className="object-cover opacity-60"
-        ></Image>
-        {/* Side Navigation Buttons */}
-        <button
-          onClick={handlePrev}
-          className="absolute left-[10] top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-          aria-label="Previous Image"
-        >
-          <ChevronLeft size={64} />
-        </button>
-        <button
-          onClick={handleNext}
-          className="absolute right-[10] top-1/2 z-40 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-          aria-label="Next Image"
-        >
-          <ChevronRight size={64} />
-        </button>
-        {/* <Image
-          src="/Map2/Khung.png"
-          alt="Background image"
-          fill
-          className="object-cover object-center"
-        ></Image> */}
-      </div>
+    <div className="relative flex flex-col md:flex-row items-center md:justify-center">
       {/* Main Gallery Container - This is the viewport for the slider */}
-      <div className="relative max-w-4xl z-10">
+      <div className="flex flex-col md:flex-row justify-center items-center relative w-full z-10 p-10">
+        <div className="h-full bg-background border-4 border-foreground shadow-2xl rounded-3xl ">
+          <Image
+            src={canva82}
+            alt="Background image"
+            fill
+            quality={50}
+            placeholder="blur"
+            className="object-cover"
+          ></Image>
+          <button
+            onClick={handlePrev}
+            className="absolute left-0 md:left-10 top-1/2 z-40 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+            aria-label="Previous Image"
+          >
+            <ChevronLeft size={32} />
+          </button>
+          <button
+            onClick={handleNext}
+            className="absolute right-0 md:right-10  top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+            aria-label="Next Image"
+          >
+            <ChevronRight size={32} />
+          </button>
+        </div>
+        <div className="flex flex-col items-center justify-center z-10 w-3/4  ">
+          <h2 className="text-5xl sm:text-6xl md:text-7xl writing font-bold uppercase text-foreground">
+            {currentItem.title}
+          </h2>
+        </div>
         {/* Viewport for the sliding track */}
-        <div className="w-full h-full overflow-hidden">
+        <div className="flex justify-center items-center h-full w-5/7 overflow-hidden">
           {/* The track that contains all images and slides */}
           <div
             className="flex h-full transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {galleryData.map((item) => (
-              <div key={item.id} className="w-full h-full flex-shrink-0">
-                <div className="relative w-[50rem] h-[35rem] ">
+              <div
+                key={item.id}
+                className="flex justify-center items-center w-full h-full flex-shrink-0"
+              >
+                <div className="relative w-[15rem] sm:w-[20rem] h-[30rem] md:w-[60rem]">
                   <Image
                     src={item.imageSrc}
                     alt={item.title}
+                    className="object-contain cursor-pointer group transform transition-transform duration-300 hover:scale-110"
+                    fill
                     quality={50}
                     placeholder="blur"
-                    className="object-contain object-center cursor-pointer group transform transition-transform duration-300 hover:scale-110"
-                    fill
                   />
                 </div>
               </div>
@@ -166,43 +166,21 @@ export default function Mob() {
         </div>
       </div>
 
-      {/* Text Overlay */}
-      <div
-        className="flex flex-col justify-center items-center
-             text-white z-20 max-w-sm w-[80rem] h-[20rem]"
-      >
-        <div className="relative w-[50rem] h-[20rem]">
-          <Image
-            src={dialogue}
-            alt="Background image"
-            fill
-            className="object-cover -z-10"
-            quality={50}
-            placeholder="blur"
-          ></Image>
-        </div>
-        <div className="absolute bottom-85 w-[30rem] h-[20rem]">
-          <h2 className="text-5xl writing font-bold text-center uppercase text-foreground">
-            {currentItem.title}
-          </h2>
-        </div>
-      </div>
-
       {/* Navigation Controls */}
-      <div className="absolute bottom-85 left-1/2 z-20 flex -translate-x-1/2 items-center gap-8">
+      <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 items-center gap-8">
         <button
           onClick={handlePrev}
           className="text-red-600/50 hover:text-red-600 transition-colors duration-300"
           aria-label="Previous Image"
         >
-          <ChevronLeft size={32} />
+          <ChevronLeft size={16} />
         </button>
 
         <div className="flex items-center gap-2">
           {galleryData.map((_, index) => (
             <div
               key={index}
-              className={`h-1 w-8 transition-all duration-300 ${
+              className={`h-1 w-2 transition-all duration-300 ${
                 index === currentIndex ? "bg-red-600" : "bg-gray-700"
               }`}
             />
@@ -214,7 +192,7 @@ export default function Mob() {
           className="text-red-600/50 hover:text-red-600 transition-colors duration-300"
           aria-label="Next Image"
         >
-          <ChevronRight size={32} />
+          <ChevronRight size={16} />
         </button>
       </div>
     </div>
