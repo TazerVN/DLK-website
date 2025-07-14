@@ -58,6 +58,8 @@ export default function Monster() {
             src={"/asset/Canva-8.png"}
             alt="Logo"
             fill
+            quality={50}
+            placeholder="blur"
             className="object-cover object-center"
           />
         </div>
@@ -66,6 +68,8 @@ export default function Monster() {
             src={"/asset/dialogue.png"}
             alt="Logo"
             fill
+            quality={50}
+            placeholder="blur"
             className="object-cover"
           />
         </div>
@@ -84,12 +88,16 @@ export default function Monster() {
               src="/asset/Canva-7.png"
               alt="Background image"
               fill
+              quality={50}
+              placeholder="blur"
               className="object-cover object-center backdrop-blur-md opacity-60"
             ></Image>
             <Image
               src="/asset/Khung.png"
               alt="Background image"
               fill
+              quality={50}
+              placeholder="blur"
               className="object-contain object-center"
             ></Image>
           </div>
@@ -112,6 +120,8 @@ export default function Monster() {
                 alt={`${selectedMonster.name} Avatar`}
                 key={selectedMonster.id} // Ad
                 fill
+                quality={50}
+                placeholder="blur"
                 className="object-contain transition-all hover:scale-110"
               />
             </div>
@@ -128,6 +138,8 @@ export default function Monster() {
             src={"/asset/dialogue.png"}
             alt={`Icon`}
             fill
+            quality={50}
+            placeholder="blur"
             className="object-cover rounded-lg"
           ></Image>
         </div>
@@ -151,6 +163,8 @@ export default function Monster() {
                     src={char.icon}
                     alt={`${char.name} Icon`}
                     fill
+                    quality={50}
+                    placeholder="blur"
                     className="object-contain rounded-lg"
                   ></Image>
                 </div>

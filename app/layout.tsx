@@ -42,6 +42,9 @@ export default function RootLayout({
             src={"/asset/world/4.png"}
             alt="background"
             fill
+            priority
+            quality={40}
+            placeholder="blur"
           ></Image>
         </div>
         {children}

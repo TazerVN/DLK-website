@@ -70,7 +70,6 @@ export default function Character() {
     characters[0]
   );
 
-
   return (
     <div>
       <div className="flex w-[100dvw] items-center justify-center">
@@ -79,6 +78,8 @@ export default function Character() {
             src={"/asset/Canva-8.png"}
             alt="Logo"
             fill
+            quality={50}
+            placeholder="blur"
             className="object-cover object-center"
           />
         </div>
@@ -87,6 +88,8 @@ export default function Character() {
             src={"/asset/dialogue.png"}
             alt="Logo"
             fill
+            quality={50}
+            placeholder="blur"
             className="object-cover"
           />
         </div>
@@ -102,6 +105,8 @@ export default function Character() {
             src="/asset/Canva-6.png"
             alt="Background"
             fill
+            quality={50}
+            placeholder="blur"
             className="object-contain opacity-50"
           />
           <div className="absolute w-[117rem] h-[70rem] border-foreground rounded-3xl border-5 overflow-hidden ">
@@ -109,6 +114,8 @@ export default function Character() {
               src="/asset/Khung.png"
               alt="Background image"
               fill
+              quality={50}
+              placeholder="blur"
               className="object-contain object-center"
             ></Image>
           </div>
@@ -124,6 +131,8 @@ export default function Character() {
                     alt={`${selectedCharacter.name} Avatar`}
                     key={selectedCharacter.id} // Ad
                     fill
+                    quality={50}
+                    placeholder="blur"
                     className="object-contain hover:scale-110 transition-all "
                     // clad key to re-trigger animations on change
                   />
@@ -167,6 +176,8 @@ export default function Character() {
                               src={char.icon}
                               alt={`${char.name} Icon`}
                               fill
+                              quality={50}
+                              placeholder="blur"
                               className="object-cover rounded-lg"
                             ></Image>
                           </div>

@@ -98,6 +98,8 @@ export default function Mob() {
           src="/asset/Canva-82.png"
           alt="Background image"
           fill
+          quality={50}
+          placeholder="blur"
           className="object-cover opacity-60"
         ></Image>
         {/* Side Navigation Buttons */}
@@ -137,6 +139,8 @@ export default function Mob() {
                   <Image
                     src={item.imageSrc}
                     alt={item.title}
+                    quality={50}
+                    placeholder="blur"
                     className="object-contain object-center cursor-pointer group transform transition-transform duration-300 hover:scale-110"
                     fill
                   />
@@ -158,6 +162,8 @@ export default function Mob() {
             alt="Background image"
             fill
             className="object-cover -z-10"
+            quality={50}
+            placeholder="blur"
           ></Image>
         </div>
         <div className="absolute bottom-85 w-[30rem] h-[20rem]">

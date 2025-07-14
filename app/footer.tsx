@@ -109,6 +109,8 @@ export default function Footer() {
               alt="Atlus Logo"
               width={140}
               height={40}
+              placeholder="blur"
+              quality={50}
               className="object-contain"
             />
             <Image
@@ -116,6 +118,8 @@ export default function Footer() {
               alt="Xbox Logo"
               width={50}
               height={35}
+              placeholder="blur"
+              quality={50}
               className="object-contain"
             />
             <Image
@@ -123,6 +127,8 @@ export default function Footer() {
               alt="Windows Logo"
               width={120}
               height={25}
+              placeholder="blur"
+              quality={50}
               className="object-contain"
             />
           </div>
@@ -136,6 +142,8 @@ export default function Footer() {
               <Image
                 width={100}
                 height={100}
+                placeholder="blur"
+                quality={50}
                 alt="ESRB Teen"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ESRB_Teen.svg/128px-ESRB_Teen.svg.png?20110324232512"
               ></Image>

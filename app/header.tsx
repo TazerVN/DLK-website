@@ -11,6 +11,8 @@ export default function Header() {
             alt="Logo"
             width={150}
             height={150}
+            quality={50}
+            placeholder="blur"
           ></Image>
         </Link>
 
@@ -25,6 +27,8 @@ export default function Header() {
               alt="About Icon"
               width={40}
               height={40}
+              quality={50}
+              placeholder="blur"
             />
             Sơ Lược
           </Link>
@@ -37,6 +41,8 @@ export default function Header() {
               alt="Contact Icon"
               width={40}
               height={40}
+              quality={50}
+              placeholder="blur"
             />
             Nhân Vật
           </Link>
@@ -49,6 +55,8 @@ export default function Header() {
               alt="Contact Icon"
               width={40}
               height={40}
+              quality={50}
+              placeholder="blur"
             />
             Ma Quỷ
           </Link>

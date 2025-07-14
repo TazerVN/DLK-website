@@ -12,6 +12,8 @@ export default function About() {
                   src={"/asset/Canva-8.png"}
                   alt="Logo"
                   fill
+                  quality={50}
+                  placeholder="blur"
                   className="object-cover object-center"
                 />
               </div>
@@ -19,7 +21,8 @@ export default function About() {
                 <Image
                   src={"/asset/dialogue.png"}
                   alt="Logo"
-                  fill
+                  quality={50}
+                  placeholder="blur"
                   className="object-cover"
                 />
               </div>
@@ -33,6 +36,8 @@ export default function About() {
                 src="/asset/Canva-2.png"
                 alt="Background image"
                 fill
+                quality={50}
+                placeholder="blur"
                 className="object-contain object-center opacity-50"
               ></Image>
             </div>
@@ -44,6 +49,8 @@ export default function About() {
                     src={"/asset/5_Map.png"}
                     alt="Background image"
                     fill
+                    quality={50}
+                    placeholder="blur"
                     className="object-cover"
                   ></Image>
                 </div>

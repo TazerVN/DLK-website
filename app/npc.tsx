@@ -60,6 +60,8 @@ export default function NPC() {
           src="/asset/Canva-82.png"
           alt="Background image"
           fill
+          quality={50}
+          placeholder="blur"
           className="object-cover opacity-60"
         ></Image>
       <button
@@ -89,6 +91,8 @@ export default function NPC() {
             alt="Background image"
             fill
             className="object-cover -z-10"
+            quality={50}
+            placeholder="blur"
           ></Image>
         </div>
         <div className="relative w-[20rem] h-[20rem]">
@@ -120,6 +124,8 @@ export default function NPC() {
                     alt={item.title}
                     className="object-contain object-center cursor-pointer group transform transition-transform duration-300 hover:scale-110"
                     fill
+                    quality={50}
+                    placeholder="blur"
                   />
                 </div>
               </div>

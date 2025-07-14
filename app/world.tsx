@@ -73,6 +73,8 @@ export default function World() {
           src="/asset/Khung.png"
           alt="Background image"
           fill
+          quality={50}
+          placeholder="blur"
           className="object-contain z-20 backdrop-brightness-90"
         ></Image>
       </div>
@@ -100,6 +102,8 @@ export default function World() {
                     <Image
                       src={item.imageSrc}
                       alt={item.title}
+                      quality={50}
+                      placeholder="blur"
                       className="object-cover -z-10"
                       fill
                     />

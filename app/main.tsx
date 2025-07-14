@@ -4,36 +4,8 @@ export default function Main() {
   return (
     <div className="flex flex-col w-dvw rounded-lg rows-start-1 row-end-2">
       <div className="w-dvw h-[100rem] flex justify-center items-center ">
-        {/* <div className="absolute h-[70rem] w-[115rem] -z-10 bg-background border-4 border-foreground">
-          <Image
-            className="object-cover rounded-4xl opacity-50"
-            src={"/BG/final/3.png"}
-            alt="Background image"
-            fill
-            // width={1920}
-            // height={1080}
-          ></Image>
-        </div> */}
-        <div className="absolute items-center justify-center flex h-[90rem] w-[120rem] rounded-xl z-[0]">
-          {/* <Image
-          className="object-contain opacity-40"
-          src={"/extra/dragon_pattern.png"}
-          alt="Background image"
-          fill
-          // width={1920}
-          // height={1080}
-        ></Image> */}
-        </div>
-        <div className="absolute h-[200rem] w-dvw backdrop-blur-md -z-10">
-          {/* <Image
-            className="object-contain rounded-4xl backdrop-blur-xs"
-            src={"/Map2/Khung.png"}
-            alt="Background image"
-            fill
-            // width={1920}
-            // height={1080}
-          ></Image> */}
-        </div>
+        <div className="absolute items-center justify-center flex h-[90rem] w-[120rem] rounded-xl z-[0]"></div>
+        <div className="absolute h-[200rem] w-dvw backdrop-blur-md -z-10"></div>
         <div className="absolute flex justify-center items-center">
           <div className="flex flex-col items-center justify-center">
             <div className="relative">
@@ -43,6 +15,9 @@ export default function Main() {
                 width={800}
                 height={800}
                 className="object-contain"
+                priority
+                quality={50}
+                placeholder="blur"
               />
             </div>
             <h1 className="title text-foreground text-9xl font-bold">
@@ -59,6 +34,8 @@ export default function Main() {
               src={"/asset/side.png"}
               alt="Logo"
               fill
+              quality={50}
+              placeholder="blur"
               className="object-cover invert"
             />
           </div>
@@ -69,6 +46,8 @@ export default function Main() {
               src={"/asset/logo/fada.png"}
               alt="Logo"
               fill
+              quality={50}
+              placeholder="blur"
               className="object-contain"
             />
           </div>
@@ -78,6 +57,8 @@ export default function Main() {
               src={"/asset/logo/hoasen.png"}
               alt="Logo"
               fill
+              quality={50}
+              placeholder="blur"
               className="object-contain"
             />
           </div>
@@ -88,6 +69,8 @@ export default function Main() {
             <Image
               width={124}
               height={128}
+              quality={50}
+              placeholder="blur"
               alt="ESRB Teen"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ESRB_Teen.svg/128px-ESRB_Teen.svg.png?20110324232512"
             ></Image>
