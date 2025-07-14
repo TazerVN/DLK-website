@@ -1,13 +1,26 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+import thosanicon from "../public/asset/char/archericon.png";
+import thosanavatar from "../public/asset/char/archergood2.png";
+import fishermanicon from "../public/asset/char/fishermanicon.png";
+import fishermanavatar from "../public/asset/char/fishermangood.png";
+import generalicon from "../public/asset/char/generalicon.png";
+import generalavatar from "../public/asset/char/generalgood.png";
+import monkicon from "../public/asset/char/monkicon.png";
+import monkavatar from "../public/asset/char/monkgood.png";
+
+import canva8 from "../public/asset/Canva-8.png";
+import dialogue from "../public/asset/dialogue.png";
+import canva6 from "../public/asset/Canva-6.png";
+import khung from "../public/asset/Khung.png";
 
 interface Character {
   id: number;
   name: string;
-  icon: string;
-  avatar: string;
+  icon: StaticImageData;
+  avatar: StaticImageData;
   story: string;
 }
 
@@ -15,32 +28,32 @@ const characters: Character[] = [
   {
     id: 1,
     name: "Thợ Săn",
-    icon: "/asset/char/archericon.png",
-    avatar: "/asset/char/archergood2.png",
+    icon: thosanicon,
+    avatar: thosanavatar,
     story:
       "Là Hoàng Hậu của vị vua triều đại cũ, sau khi vua băng hà một cách bí ẩn. Nàng về thôn quê trên vùng núi xa vì trước đây nàng là trưởng thôn của một bộ lạc săn quỷ. Là một tay bắn nỏ cừ khôi với thần thái của nữ chiến binh, việc hạ độc bọn quỷ khi chúng công không để ý là điều dễ dàng.",
   },
   {
     id: 2,
     name: "Ngư Dân",
-    icon: "/asset/char/fishermanicon.png",
-    avatar: "/asset/char/fishermangood.png",
+    icon: fishermanicon,
+    avatar: fishermanavatar,
     story:
       "Sinh sống ở làng chài, sau khi thảm hoạ xảy ra gia đình anh bị bọn quỷ nuốt trọn. Mang nỗi căm hận anh quyết tâm đi tu và diệt trừ quỷ dữ. Hình xăm trên người anh mang ấn chú trừ quỷ.",
   },
   {
     id: 3,
     name: "Tướng Quân",
-    icon: "/asset/char/generalicon.png",
-    avatar: "/asset/char/generalgood.png",
+    icon: generalicon,
+    avatar: generalavatar,
     story:
       "Vị Tướng Quân trong triều, là người được ví như tấm khiên bất bại. Càn quét giặc ngoại xâm mang nhiều chiến tích cho triều đình. Nhưng sau khi vị Vua cũ qua đời bí ẩn, anh tự trách đã không bảo vệ được ngài rồi rời đi ẩn cư trừ quỷ giúp dân.",
   },
   {
     id: 4,
     name: "Thiền Sư",
-    icon: "/asset/char/monkicon.png",
-    avatar: "/asset/char/monkgood.png",
+    icon: monkicon,
+    avatar: monkavatar,
     story:
       "Một Vị vua triều đại cũ, sau khi biết được bí mật đang được ẩn giấu đã giả chết để tìm ra sự thật về phong ấn ngàn năm. Là sinh linh được luân hồi qua hàng ngàn năm hòng ngăn chặn kẻ phá hoại phong ấn.",
   },
@@ -75,7 +88,7 @@ export default function Character() {
       <div className="flex w-[100dvw] items-center justify-center">
         <div className="absolute w-[100dvw] h-[9rem] z-[-5] border-y-4 bg-background">
           <Image
-            src={"/asset/Canva-8.png"}
+            src={canva8}
             alt="Logo"
             fill
             quality={50}
@@ -85,7 +98,7 @@ export default function Character() {
         </div>
         <div className="relative w-[100rem] h-[30rem] z-[-5]">
           <Image
-            src={"/asset/dialogue.png"}
+            src={dialogue}
             alt="Logo"
             fill
             quality={50}
@@ -102,7 +115,7 @@ export default function Character() {
         {/* --- Main Container --- */}
         <div className="relative w-[117rem] h-[70rem] text-white font-lato backdrop-blur-md">
           <Image
-            src="/asset/Canva-6.png"
+            src={canva6}
             alt="Background"
             fill
             quality={50}
@@ -111,7 +124,7 @@ export default function Character() {
           />
           <div className="absolute w-[117rem] h-[70rem] border-foreground rounded-3xl border-5 overflow-hidden ">
             <Image
-              src="/asset/Khung.png"
+              src={khung}
               alt="Background image"
               fill
               quality={50}

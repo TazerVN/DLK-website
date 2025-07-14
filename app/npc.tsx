@@ -1,12 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // npm i lucide-react
+import chutieu from "../public/asset/NPC/npc1.png";
+import codong from "../public/asset/NPC/npc2.png";
+import thodia from "../public/asset/NPC/npc3.png";
+import canva82 from "../public/asset/Canva-82.png";
+import scroll from "../public/asset/scroll.png";
 
 type GalleryItem = {
   id: number;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   title: string;
   description: string;
 };
@@ -14,21 +19,21 @@ type GalleryItem = {
 const galleryData: GalleryItem[] = [
   {
     id: 1,
-    imageSrc: "/asset/NPC/npc1.png",
+    imageSrc: chutieu,
     title: "CHÚ TIỂU",
     description:
       "Là một cậu nhóc ở chùa Linh Tự luôn lên núi hái thuốc và tìm khoáng sản chủ yếu là Ngọc Thạch.",
   },
   {
     id: 2,
-    imageSrc: "/asset/NPC/npc2.png",
+    imageSrc: codong,
     title: "CÔ ĐỒNG",
     description:
       "Vị thầy thuốc gieo quẻ cho nhân vật mỗi khi gặp mặt, Có bán các vật dụng trừ tà có tính sát thương cao.",
   },
   {
     id: 3,
-    imageSrc: "/asset/NPC/npc3.png",
+    imageSrc: thodia,
     title: "THỔ ĐỊA",
     description:
       "Vị thần cai quản các vùng đất, Ông là người giúp chúng ta di chuyển nhanh hơn và bán các vật phẩm hỗ trợ.",
@@ -57,29 +62,29 @@ export default function NPC() {
       {/* Background with texture */}
       <div className="absolute w-[100rem] h-[45rem] bg-background border-4 border-foreground shadow-2xl rounded-3xl overflow-hidden">
         <Image
-          src="/asset/Canva-82.png"
+          src={canva82}
           alt="Background image"
           fill
           quality={50}
           placeholder="blur"
           className="object-cover opacity-60"
         ></Image>
-      <button
-        onClick={handlePrev}
-        className="absolute left-10 top-1/2 z-40 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-        aria-label="Previous Image"
-      >
-        <ChevronLeft size={64} />
-      </button>
-      <button
-        onClick={handleNext}
-        className="absolute right-10 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-        aria-label="Next Image"
-      >
-        <ChevronRight size={64} />
-      </button>
+        <button
+          onClick={handlePrev}
+          className="absolute left-10 top-1/2 z-40 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+          aria-label="Previous Image"
+        >
+          <ChevronLeft size={64} />
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute right-10 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+          aria-label="Next Image"
+        >
+          <ChevronRight size={64} />
+        </button>
       </div>
-       {/* Side Navigation Buttons */}
+      {/* Side Navigation Buttons */}
       {/* Text Overlay */}
       <div
         className="flex flex-col justify-center items-center
@@ -87,7 +92,7 @@ export default function NPC() {
       >
         <div className="absolute w-[60rem] h-[75rem]">
           <Image
-            src="/asset/scroll.png"
+            src={scroll}
             alt="Background image"
             fill
             className="object-cover -z-10"
@@ -104,8 +109,6 @@ export default function NPC() {
           </p>
         </div>
       </div>
-
-    
 
       {/* Main Gallery Container - This is the viewport for the slider */}
       <div className="relative max-w-4xl z-10">

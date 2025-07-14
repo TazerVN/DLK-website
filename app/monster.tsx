@@ -1,13 +1,21 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
+
+import birdicon from "../public/asset/boss/bird.png";
+import dragonicon from "../public/asset/boss/dragon.png";
+import quyicon from "../public/asset/boss/turtle.png";
+import lionicon from "../public/asset/boss/lion.png";
+import canva8 from "../public/asset/Canva-8.png";
+import dialogue from "../public/asset/dialogue.png";
+import canva7 from "../public/asset/Canva-7.png";
+import khung from "../public/asset/Khung.png";
 
 interface Monster {
   id: number;
   name: string;
-  icon: string;
-  avatar: string;
+  icon: StaticImageData;
   story: string;
 }
 
@@ -15,32 +23,28 @@ const monsters: Monster[] = [
   {
     id: 1,
     name: "PHỤNG",
-    icon: "/asset/boss/bird.png",
-    avatar: "/asset/boss/bird.png",
+    icon: birdicon,
     story:
       "Phượng hoàng được bắt nguồn từ nền văn hóa của Trung Hoa, được ví là loài chim đẹp nhất trong các loài chim. Phượng hoàng tuy được phân thành Phượng (con trống) và Hoàng (con mái) nhưng về sau không còn sự phân biệt rạch ròi như vậy nữa mà các đặc điểm được kết hợp lại với nhau và gọi chung là Phượng hoàng.",
   },
   {
     id: 2,
     name: "LONG",
-    icon: "/asset/boss/dragon.png",
-    avatar: "/asset/boss/dragon.png",
+    icon: dragonicon,
     story:
       "Rồng trong truyền thuyết được coi là con vật của trời, có quyền năng tối cao hơn các loài vật khác. Sự xuất hiện của Rồng được quan niệm là mang lại điều tốt lành, may mắn, thuận lợi và bình an. Người xưa quan niệm rồng là sứ giả đi lại với con người có thể gửi gắm những ước nguyện của cuộc sống như cầu mưa thuận gió hòa, cầu phồn thực sinh sôi...",
   },
   {
     id: 3,
     name: "QUY",
-    icon: "/asset/boss/turtle.png",
-    avatar: "/asset/boss/turtle.png",
+    icon: quyicon,
     story:
       "Rùa là con vật duy nhất có thật trong tự nhiên. Rùa là một loài bò sát lưỡng cư có tuổi thọ cao và khả năng sống trong một thời gian dài mà không cần tới thức ăn do đó được ví với phẩm chất thanh cao, thoát tục. Rùa từ lâu đã gắn liền với văn hóa người Việt thông qua câu chuyện thần Kim Quy giúp vua An Dương.",
   },
   {
     id: 4,
     name: "LÂN",
-    icon: "/asset/boss/lion.png",
-    avatar: "/asset/boss/lion.png",
+    icon: lionicon,
     story:
       "Lân là linh vật được biết đến thứ 2 sau Rồng. Dân gian cho rằng sự xuất hiện của Lân báo hiệu điềm lành, thái bình thịnh vượng sắp tới. Ngoài ra hình tượng Lân cũng được dùng để trấn giữ cửa nhà, hóa giải hung khí khi đối diện với cửa nhà khác, có ngã ba, ngã tư, góc nhọn, đường vòng chiếu thẳng vào nhà.",
   },
@@ -55,7 +59,7 @@ export default function Monster() {
       <div className="flex w-[100dvw] items-center justify-center">
         <div className="absolute w-[100dvw] h-[9rem] border-y-4 bg-background z-10">
           <Image
-            src={"/asset/Canva-8.png"}
+            src={canva8}
             alt="Logo"
             fill
             quality={50}
@@ -65,7 +69,7 @@ export default function Monster() {
         </div>
         <div className="relative w-[100rem] h-[30rem] z-10">
           <Image
-            src={"/asset/dialogue.png"}
+            src={dialogue}
             alt="Logo"
             fill
             quality={50}
@@ -85,7 +89,7 @@ export default function Monster() {
           {/* bg */}
           <div className="absolute w-[117rem] h-[70rem] self-start border-foreground rounded-3xl border-4 overflow-hidden backdrop-blur-md">
             <Image
-              src="/asset/Canva-7.png"
+              src={canva7}
               alt="Background image"
               fill
               quality={50}
@@ -93,7 +97,7 @@ export default function Monster() {
               className="object-cover object-center backdrop-blur-md opacity-60"
             ></Image>
             <Image
-              src="/asset/Khung.png"
+              src={khung}
               alt="Background image"
               fill
               quality={50}
@@ -116,7 +120,7 @@ export default function Monster() {
             {/* Images */}
             <div className="relative w-[80rem] h-[40rem] rounded-lg transition-all duration-500 ease-in-out">
               <Image
-                src={selectedMonster.avatar}
+                src={selectedMonster.icon}
                 alt={`${selectedMonster.name} Avatar`}
                 key={selectedMonster.id} // Ad
                 fill
@@ -135,7 +139,7 @@ export default function Monster() {
                 </h3> */}
         <div className="relative h-[25rem] w-[50rem]">
           <Image
-            src={"/asset/dialogue.png"}
+            src={dialogue}
             alt={`Icon`}
             fill
             quality={50}

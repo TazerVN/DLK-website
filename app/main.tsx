@@ -1,4 +1,8 @@
 import Image from "next/image";
+import title from "../public/asset/title.png"
+import side from "../public/asset/side.png"
+import fada from "../public/asset/logo/fada.png"
+import hoasen from "../public/asset/logo/hoasen.png"
 
 export default function Main() {
   return (
@@ -10,7 +14,7 @@ export default function Main() {
           <div className="flex flex-col items-center justify-center">
             <div className="relative">
               <Image
-                src={"/asset/title.png"}
+                src={title}
                 alt="Logo"
                 width={800}
                 height={800}
@@ -31,7 +35,7 @@ export default function Main() {
           <p className="text-3xl text-white">A project by</p>
           <div className="relative w-[11rem] h-[5rem] mt-4">
             <Image
-              src={"/asset/side.png"}
+              src={side}
               alt="Logo"
               fill
               quality={50}
@@ -43,7 +47,7 @@ export default function Main() {
         <div className="flex gap-32">
           <div className="relative w-[10rem] h-[10rem] mt-4">
             <Image
-              src={"/asset/logo/fada.png"}
+              src={fada}
               alt="Logo"
               fill
               quality={50}
@@ -54,7 +58,7 @@ export default function Main() {
 
           <div className="relative w-[10rem] h-[10rem] mt-4">
             <Image
-              src={"/asset/logo/hoasen.png"}
+              src={hoasen}
               alt="Logo"
               fill
               quality={50}
@@ -70,7 +74,6 @@ export default function Main() {
               width={124}
               height={128}
               quality={50}
-              placeholder="blur"
               alt="ESRB Teen"
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ESRB_Teen.svg/128px-ESRB_Teen.svg.png?20110324232512"
             ></Image>

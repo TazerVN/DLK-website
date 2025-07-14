@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import hoasen from "../public/asset/logo/hoasen.png";
+import studio from "../public/asset/white.png";
+import fada from "../public/asset/logo/fada.png";
 
 // Helper component for social media icons
 const SocialIcon = ({ children }: { children: React.ReactNode }) => (
@@ -105,8 +108,8 @@ export default function Footer() {
           {/* Section 2: Platform Logos */}
           <div className="flex justify-center items-center flex-wrap gap-x-8 md:gap-x-12 gap-y-4 mb-8">
             <Image
-              src="/asset/logo/hoasen.png"
-              alt="Atlus Logo"
+              src={hoasen}
+              alt="hoasen logo"
               width={140}
               height={40}
               placeholder="blur"
@@ -114,8 +117,8 @@ export default function Footer() {
               className="object-contain"
             />
             <Image
-              src="/asset/white.png"
-              alt="Xbox Logo"
+              src={studio}
+              alt="studio Logo"
               width={50}
               height={35}
               placeholder="blur"
@@ -123,8 +126,8 @@ export default function Footer() {
               className="object-contain"
             />
             <Image
-              src="/asset/logo/fada.png"
-              alt="Windows Logo"
+              src={fada}
+              alt="fada Logo"
               width={120}
               height={25}
               placeholder="blur"
@@ -142,7 +145,6 @@ export default function Footer() {
               <Image
                 width={100}
                 height={100}
-                placeholder="blur"
                 quality={50}
                 alt="ESRB Teen"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/ESRB_Teen.svg/128px-ESRB_Teen.svg.png?20110324232512"
@@ -152,10 +154,7 @@ export default function Footer() {
 
           {/* Section 4: Legal Text */}
           <div className="text-center text-xs text-gray-500 max-w-5xl mx-auto space-y-4 mb-10">
-            <p>
-             Copyright © 2025 by Lac Studio
-            </p>
-            
+            <p>Copyright © 2025 by Lac Studio</p>
           </div>
         </div>
       </footer>

@@ -1,12 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // npm i lucide-react
+import khung from "../public/asset/Khung.png";
+import linhtu from "../public/asset/world/1.png"
+import hochuongthan from "../public/asset/world/2.png"
+import hoasonthach from "../public/asset/world/3.png"
+import rungulinh from "../public/asset/world/4.png"
+import quylinhtran from "../public/asset/world/5.png"
 
 type GalleryItem = {
   id: number;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   title: string;
   description: string;
 };
@@ -14,34 +20,34 @@ type GalleryItem = {
 const galleryData: GalleryItem[] = [
   {
     id: 1,
-    imageSrc: "/asset/world/1.png",
+    imageSrc: linhtu,
     title: "LINH TỰ",
     description: "Cây Linh Khí.",
   },
   {
     id: 2,
-    imageSrc: "/asset/world/2.png",
+    imageSrc: hochuongthan,
     title: "HỒ CHUÔNG THẦN",
     description:
       "Nơi chiếc chuông cổ đang cố gắng thanh tẩy vùng đất xung quanh nó, dù cho bị tàn phá từ bọn quỷ dữ.",
   },
   {
     id: 3,
-    imageSrc: "/asset/world/3.png",
+    imageSrc: hoasonthach,
     title: "HỎA SƠN THẠCH",
     description:
       "Những ngọn núi lửa của vùng đất Hoả Quốc bị bọn quỷ lây lan và phát triển, từng thớ thịt ngang càng lan rộng hơn.",
   },
   {
     id: 4,
-    imageSrc: "/asset/world/4.png",
+    imageSrc: rungulinh,
     title: "RỪNG U LINH",
     description:
       "Khu rừng tối ám thấp và ma mị. Xương người và động vật chết ở khắp mọi nơi, không khí ngột ngạt như có ai đang nhìn.",
   },
   {
     id: 5,
-    imageSrc: "/asset/world/5.png",
+    imageSrc: quylinhtran,
     title: "QUỶ LINH TRẤN",
     description:
       "Chúng đã chiếm từng thị trấn và nuốt trọn những khu nhà. Chúng liên kết lại thành một mạng lưới để dễ dàng quan sát hơn.",
@@ -70,7 +76,7 @@ export default function World() {
       {/* Background with texture */}
       <div className="absolute flex just w-[105rem] h-[63rem] border-4 border-foreground shadow-2xl rounded-3xl overflow-hidden">
         <Image
-          src="/asset/Khung.png"
+          src={khung}
           alt="Background image"
           fill
           quality={50}
@@ -111,25 +117,24 @@ export default function World() {
                 </div>
               ))}
             </div>
-      {/* Side Navigation Buttons */}
-      <button
-        onClick={handlePrev}
-        className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-        aria-label="Previous Image"
-      >
-        <ChevronLeft size={64} />
-      </button>
-      <button
-        onClick={handleNext}
-        className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
-        aria-label="Next Image"
-      >
-        <ChevronRight size={64} />
-      </button>
+            {/* Side Navigation Buttons */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-0 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+              aria-label="Previous Image"
+            >
+              <ChevronLeft size={64} />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-0 top-1/2 z-20 -translate-y-1/2 rounded-sm bg-foreground p-2 text-white transition-colors duration-300 hover:bg-black"
+              aria-label="Next Image"
+            >
+              <ChevronRight size={64} />
+            </button>
           </div>
         </div>
       </div>
-
 
       {/* Navigation Controls */}
       <div className="absolute bottom-60 left-1/2 z-20 flex -translate-x-1/2 items-center gap-8">

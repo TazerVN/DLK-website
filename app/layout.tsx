@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import localFont from "next/font/local";
+import bg from "../public/asset/world/4.png";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,7 +40,7 @@ export default function RootLayout({
         <div className="fixed inset-0 opacity-20 bg-background -z-10">
           <Image
             className="object-cover"
-            src={"/asset/world/4.png"}
+            src={bg}
             alt="background"
             fill
             priority

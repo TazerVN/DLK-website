@@ -1,4 +1,8 @@
 import Image from "next/image";
+import canva8 from "../public/asset/Canva-8.png"
+import dialogue from "../public/asset/dialogue.png"
+import canva2 from "../public/asset/Canva-2.png"
+import map from "../public/asset/5_Map.png"
 
 export default function About() {
   return (
@@ -9,21 +13,23 @@ export default function About() {
             <div className="flex w-[100dvw] items-center justify-center">
               <div className="absolute w-[100dvw] h-[9rem] z-[-5] border-y-4 bg-background">
                 <Image
-                  src={"/asset/Canva-8.png"}
+                  src={canva8}
                   alt="Logo"
                   fill
                   quality={50}
                   placeholder="blur"
+                  blurDataURL=""
                   className="object-cover object-center"
                 />
               </div>
-              <div className="relative w-[100rem] h-[30rem] z-[-5]">
+              <div className="relative w-[100rem] h-[30rem] z-[-5] bottom-50">
                 <Image
-                  src={"/asset/dialogue.png"}
+                  src={dialogue}
                   alt="Logo"
                   quality={50}
                   placeholder="blur"
-                  className="object-cover"
+                  blurDataURL=""
+                  className="object-cover object-center"
                 />
               </div>
               {/* title */}
@@ -33,11 +39,12 @@ export default function About() {
             </div>
             <div className="absolute bottom-30 self-center w-[130rem] h-[74rem] backdrop-blur-sm border-foreground bg-background border-5 rounded-2xl overflow-hidden">
               <Image
-                src="/asset/Canva-2.png"
+                src={canva2}
                 alt="Background image"
                 fill
                 quality={50}
                 placeholder="blur"
+                blurDataURL=""
                 className="object-contain object-center opacity-50"
               ></Image>
             </div>
@@ -46,11 +53,12 @@ export default function About() {
               <div className="flex items-center">
                 <div className="relative inset-0 w-[60rem] h-[40rem]">
                   <Image
-                    src={"/asset/5_Map.png"}
+                    src={map}
                     alt="Background image"
                     fill
                     quality={50}
                     placeholder="blur"
+                    blurDataURL=""
                     className="object-cover"
                   ></Image>
                 </div>

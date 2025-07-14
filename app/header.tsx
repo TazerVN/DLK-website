@@ -1,5 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
+import title from "../public/asset/title.png";
+import flower from "../public/asset/flower.png";
+import wheel from "../public/asset/wheel.png";
+import boss from "../public/asset/boss.png";
 
 export default function Header() {
   return (
@@ -7,7 +11,7 @@ export default function Header() {
       <div className="container flex h-30 justify-between">
         <Link className="mr-6 flex items-center space-x-3" href="/">
           <Image
-            src="/asset/title.png"
+            src={title}
             alt="Logo"
             width={150}
             height={150}
@@ -23,7 +27,7 @@ export default function Header() {
             className="flex items-center gap-2 transition-colors font-bold text-2xl hover:text-yellowground/80 text-yellowground/60"
           >
             <Image
-              src="/asset/flower.png"
+              src={flower}
               alt="About Icon"
               width={40}
               height={40}
@@ -37,7 +41,7 @@ export default function Header() {
             className="flex items-center gap-2 transition-colors font-bold text-2xl hover:text-yellowground/80 text-yellowground/60"
           >
             <Image
-              src="/asset/wheel.png"
+              src={wheel}
               alt="Contact Icon"
               width={40}
               height={40}
@@ -51,7 +55,7 @@ export default function Header() {
             className="flex items-center gap-2 transition-colors font-bold text-2xl hover:text-yellowground/80 text-yellowground/60"
           >
             <Image
-              src="/asset/boss.png"
+              src={boss}
               alt="Contact Icon"
               width={40}
               height={40}

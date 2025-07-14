@@ -1,74 +1,89 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react"; // npm i lucide-react
+
+import canva82 from "../public/asset/Canva-82.png";
+import dialogue from "../public/asset/dialogue.png";
+import mada from "../public/asset/ma/Ma_da.png";
+import madoi from "../public/asset/ma/Ma_Doi.png";
+import malai from "../public/asset/ma/Ma_lai.png";
+import mamatmam from "../public/asset/ma/Ma_mat_mam.png";
+import nguoica from "../public/asset/ma/Nguoi_ca.png";
+import ongbabi from "../public/asset/ma/Ong_3Bi.png";
+import quy1gio from "../public/asset/ma/Quy_1_Gio.png";
+import quynhaptrang1 from "../public/asset/ma/Quy_nhap_trang_1.png";
+import quynhaptrang2 from "../public/asset/ma/Quy_nhap_trang_2.png";
+import quysong from "../public/asset/ma/Quy_Song.png";
+import thantrung from "../public/asset/ma/Than_Trung.png";
+import vongnhi from "../public/asset/ma/Vong_nhi.png";
 
 type Mob = {
   id: number;
-  imageSrc: string;
+  imageSrc: StaticImageData;
   title: string;
 };
 
 const galleryData: Mob[] = [
   {
     id: 1,
-    imageSrc: "/asset/ma/Ma_da.png",
+    imageSrc: mada,
     title: "Ma DA",
   },
   {
     id: 2,
-    imageSrc: "/asset/ma/Ma_doi.png",
+    imageSrc: madoi,
     title: "MA ĐÓI",
   },
   {
     id: 3,
-    imageSrc: "/asset/ma/Ma_lai.png",
+    imageSrc: malai,
     title: "MA LAI",
   },
   {
     id: 4,
-    imageSrc: "/asset/ma/Ma_mat_mam.png",
+    imageSrc: mamatmam,
     title: "MA MẶT MÂM",
   },
   {
     id: 5,
-    imageSrc: "/asset/ma/Nguoi_ca.png",
+    imageSrc: nguoica,
     title: "NGƯỜI CÁ",
   },
   {
     id: 6,
-    imageSrc: "/asset/ma/Ong_3Bi.png",
+    imageSrc: ongbabi,
     title: "ÔNG BA BỊ",
   },
   {
     id: 7,
-    imageSrc: "/asset/ma/Quy_1_Gio.png",
+    imageSrc: quy1gio,
     title: "QUỶ 1 GIÒ",
   },
   {
     id: 8,
-    imageSrc: "/asset/ma/Quy_nhap_trang_1.png",
+    imageSrc: quynhaptrang1,
     title: "QUỶ NHẬP TRÀNG (NAM)",
   },
   {
     id: 9,
-    imageSrc: "/asset/ma/Quy_nhap_trang_2.png",
+    imageSrc: quynhaptrang2,
     title: "QUỶ NHẬP TRÀNG (NỮ)",
   },
   {
     id: 10,
-    imageSrc: "/asset/ma/Quy_Song.png",
+    imageSrc: quysong,
     title: "QUỶ SÔNG",
   },
   {
     id: 11,
-    imageSrc: "/asset/ma/Than_Trung.png",
+    imageSrc: thantrung,
     title: "THẦN TRÙNG",
   },
   {
     id: 12,
-    imageSrc: "/asset/ma/Vong_nhi.png",
+    imageSrc: vongnhi,
     title: "VONG NHI",
   },
 ];
@@ -95,7 +110,7 @@ export default function Mob() {
       {/* Background with texture */}
       <div className="absolute w-[110rem] h-[50rem] bg-background border-4 border-foreground rounded-2xl">
         <Image
-          src="/asset/Canva-82.png"
+          src={canva82}
           alt="Background image"
           fill
           quality={50}
@@ -158,7 +173,7 @@ export default function Mob() {
       >
         <div className="relative w-[50rem] h-[20rem]">
           <Image
-            src="/asset/dialogue.png"
+            src={dialogue}
             alt="Background image"
             fill
             className="object-cover -z-10"
